@@ -60,7 +60,7 @@ fn generate_text(model: &std::collections::HashMap<&str, Vec<&str>>, num_sentenc
                 }
             }
         } else {
-            // Randomize the next word if it's not found in the model
+            // Randomize the next word if it's not found in the model. Maybe should make it choose from the actual first words of different sentences.
             let random_word = model.keys().choose(&mut rand::thread_rng()).unwrap();
             generated_text.push(*random_word);
             current_word = *random_word;
